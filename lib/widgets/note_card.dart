@@ -25,7 +25,6 @@ class NoteCard extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.edit),
               onPressed: () {
-                print('hii' + docId);
                 Navigator.pushNamed(context, '/note',
                     arguments: {'docId': docId});
               },

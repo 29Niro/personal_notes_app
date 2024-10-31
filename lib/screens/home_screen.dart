@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/note.dart';
@@ -66,30 +68,30 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           Navigator.pushNamed(context, '/note');
         },
-        child: const Icon(Icons.add),
         tooltip: 'Add Note',
+        child: const Icon(Icons.add),
       ),
     );
   }
 
   // Function to build empty state widget
   Widget _buildEmptyState() {
-    return Center(
+    return const Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
+          Icon(
             Icons.notes,
             size: 64.0,
             color: Colors.grey,
           ),
-          const SizedBox(height: 16.0),
-          const Text(
+          SizedBox(height: 16.0),
+          Text(
             'No notes available',
             style: TextStyle(fontSize: 20, color: Colors.grey),
           ),
-          const SizedBox(height: 8.0),
-          const Text(
+          SizedBox(height: 8.0),
+          Text(
             'Tap the + button to add a new note.',
             textAlign: TextAlign.center,
             style: TextStyle(color: Colors.grey),
@@ -109,12 +111,12 @@ class HomeScreen extends StatelessWidget {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0), // Rounded corners
           ),
-          title: Row(
+          title: const Row(
             children: [
-              const Icon(Icons.warning,
+              Icon(Icons.warning,
                   color: Colors.red, size: 24.0), // Warning icon
-              const SizedBox(width: 8.0), // Space between icon and text
-              const Text('Delete Note', style: TextStyle(fontSize: 18)),
+              SizedBox(width: 8.0), // Space between icon and text
+              Text('Delete Note', style: TextStyle(fontSize: 18)),
             ],
           ),
           content: const Text(
